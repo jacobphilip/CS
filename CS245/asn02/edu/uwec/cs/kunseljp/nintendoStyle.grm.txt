@@ -1,0 +1,52 @@
+<start>
+One day at <location> , our lone hero <character> was <travel> along the plains.  They came upon an empty <containment> and realized all the <creatures> were missing!  Our hero started <travel> around <simile> until he ended up <contacting> <villain> to order some more <creatures> .
+
+<location>
+the land of Hyrule
+The Mushroom Kingdom
+a distant planet
+the continent of Archanea
+the Kongo Jungle
+Dream Land
+
+<character>
+Mario
+Link
+Luigi
+Marth
+Kirby
+
+<travel>
+running
+jumping
+rolling
+dancing
+diving
+
+<containment>
+pen
+box
+barrel
+mine cart
+
+<creatures>
+goombas
+octoroks
+klap traps
+koopas
+Waddle Dees
+
+<simile>
+like a cucoo with its head cut off
+like Princess Peach fleeing from Bowser
+like a really warm goron
+
+<contacting>
+calling
+sending text messages to
+yelling really loud to
+
+<villain>
+Bowser
+Ganondorf
+King Dedede
