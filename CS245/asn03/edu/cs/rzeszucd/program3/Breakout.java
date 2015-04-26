@@ -8,9 +8,29 @@ import javax.swing.*;
 public class Breakout {
 	public static ArrayList<BreakoutComponent> movingC = new ArrayList<BreakoutComponent>();
 	public static BreakoutPanel BP;
-	public static int brickCount;
+	private volatile static int brickCount;
 	private static final String board = "edu/cs/rzeszucd/program3/board1.txt"; // file location
 
+
+
+    public void incrementCount() {
+        synchronized (Breakout.class) {
+            brickCount++;
+        }
+    }
+	
+    public static void reduceCount() {
+    	synchronized (Breakout.class) {
+    		brickCount--;
+    	}
+    }
+    
+    public static void zeroCount() {
+    	synchronized (Breakout.class) {
+    		brickCount = 0;
+    	}
+    }
+	
 	public Breakout() {
 		// Main JFrame where panels exist
 		// Creates GUI for breakout to take place
@@ -72,12 +92,12 @@ public class Breakout {
 
 	// method which counts down the bricks that are still in play
 	public void countBricks() {
-		brickCount = 0;
+		zeroCount();
 		for (int i = 0; i < BreakoutPanel.components.size(); i++) {
 			if ((BreakoutPanel.components.get(i)).getClass().equals(
 					(Brick.class))) {
 				if (((Brick) (BreakoutPanel.components.get(i))).color != Color.BLACK) {
-					brickCount++;
+					incrementCount();
 				}
 
 			}

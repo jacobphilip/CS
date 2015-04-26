@@ -14,10 +14,16 @@ public class Painter extends JFrame {
 	public static JPanel content;
 	protected Color c = Color.BLACK;
 	protected String type;
-	protected static String username;
+	protected volatile String username;
 	protected static JTextArea textField;
 	public static PaintingPanel middle = null;
 
+    public void resetUser() {
+        synchronized (Painter.class) {
+            username = new String();
+        }
+    }
+	
 	// Connection
 	public static Socket s;
 	private static String address = "127.0.0.1";
@@ -318,7 +324,7 @@ public class Painter extends JFrame {
 	public void fetchUsername() {
 		username = "";
 		try {
-			while (username.equals("") || username.equals(null)) {
+			while (username != null && !username.isEmpty()) {
 
 				username = JOptionPane.showInputDialog(content, "Please enter a username.");
 

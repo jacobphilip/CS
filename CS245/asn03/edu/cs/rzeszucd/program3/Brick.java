@@ -42,7 +42,7 @@ public class Brick extends BreakoutComponent {
 				// Makes blocks disappear turns them black
 				if (this.color != Color.BLACK) {
 					this.changeColor(Color.BLACK);
-					Breakout.brickCount = Breakout.brickCount - 1;
+					Breakout.reduceCount();
 				}
 			}
 		}

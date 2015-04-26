@@ -8,7 +8,7 @@ import javax.imageio.*;
 
 public class Mosaic {
 
-	public static BufferedImage newImage;
+	public volatile BufferedImage newImage;
 
 	Mosaic(BufferedImage originalImage, int tileWidth, int tileHeight,
 			ArrayList<BufferedImage> tiles, ArrayList<Color> tileColors,
